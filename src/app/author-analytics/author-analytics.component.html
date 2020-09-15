@@ -1,0 +1,30 @@
+<div class="topDiv">
+  <mat-card>
+    <div class="titleDiv">Choose User</div>
+    <hr>
+    <form>
+      <mat-form-field class="firstInput">
+        <input matInput placeholder="Enter author name" name="author" [formControl]="authorCtrl">
+      </mat-form-field>
+    </form>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="searchFunction()">Search</button>
+      <span *ngIf="error" class="error">{{errorMessage}}</span>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<mat-accordion class="headers-align">
+  <mat-expansion-panel *ngFor="let article of articleList" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{article._id}}
+      </mat-panel-title>
+      <mat-panel-description>{{article.rev}} revisions <mat-icon></mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div>
+      {{article.timelist}}
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

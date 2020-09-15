@@ -1,0 +1,51 @@
+.selectionCard {
+    display: flex;
+    height: 90px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.cardStyle {
+    display: flex;
+    justify-content: space-around;
+}
+.matWidth {
+    width: 49%;
+}
+
+.matCard {
+    margin-top: 10px;
+    width: 346px;
+    height: 100%;
+}
+
+.matCardSlider {
+    margin-top: 10px;
+    width: 374px;
+}
+
+.titleDiv {
+    text-align: left;
+    margin-bottom: -10px;
+    font-weight: bolder;
+    color: #6C809A;
+    font-size: 20px;
+}
+
+.formDiv {
+    display: inline-grid;
+}
+
+.userSelected {
+    color:black;
+    font-weight: bolder;
+}
+
+.listStyle {
+    font-weight:bolder;
+    color: cadetblue;
+}
+
+.sliderStyle {
+    width: -webkit-fill-available;
+}

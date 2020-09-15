@@ -1,0 +1,31 @@
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleDiv {
+    text-align: left;
+    margin-bottom: -10px;
+    font-weight: bolder;
+    color: #6C809A;
+    font-size: 20px;
+}
+
+.topDiv {
+  margin-bottom: 10px;
+}
+
+.firstInput {
+  width: 50%;
+}
+
+.error {
+  color:red;
+  font-size: 12px;
+  margin-left: 10px;
+}

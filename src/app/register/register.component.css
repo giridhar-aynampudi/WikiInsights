@@ -1,0 +1,16 @@
+.formDiv {
+  width:28%;
+  padding-left: 56px;
+}
+
+.imageStyle {
+  margin-bottom: -16px;
+}
+
+.imageDiv {
+  width: 62%;
+}
+
+.topDiv {
+  display:flex;
+}

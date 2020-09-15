@@ -1,0 +1,70 @@
+.form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+.full-width {
+    width: 100%;
+}
+
+.displayClass {
+    display: none;
+}
+
+.titleDiv {
+    text-align: left;
+    margin-bottom: -10px;
+    font-weight: bolder;
+    color: #6C809A;
+    font-size: 20px;
+}
+
+.topDiv {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.articleDiv {
+    width: 49%;
+}
+
+.yearDiv {
+    width:49%;
+}
+
+.dateDiv {
+    margin-right: 36px;
+}
+
+.error {
+    font-size:12px;
+    color:red;
+    margin-top: 9px;
+}
+
+.mainDiv {
+    margin-top: 10px;
+}
+
+.artTitle {
+    font-size: 30px;
+    margin-bottom: -10px;
+    color: cadetblue;
+}
+
+.userDiv {
+    font-size: 22px;
+    color:black;
+    font-weight: bolder;
+}
+
+.revSpan {
+    font-size: 18px;
+    color: rgba(0,0,0,.54);
+}
+
+.buttonStyle {
+    margin-top: -47px;
+}

@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="cardStyle">
+    <mat-card class="matCard">
+      <div class="titleDiv">
+        Highest number of revisions
+      </div>
+      <hr>
+      <div>Number of article selected: <span class="userSelected">{{userSelection}}</span>
+      </div>
+      <div *ngFor="let list of lists">
+        <div *ngIf="!changed" class="listStyle">{{list}}</div>
+      </div>
+      <div *ngFor="let lister of slicedList">
+        <div *ngIf="changed" class="listStyle">{{lister}}</div>
+      </div>
+    </mat-card>
+    <div>
+      <mat-card class="matCardSlider">
+        <div class="titleDiv">
+            Choose number of Articles
+        </div>
+        <hr>
+        <mat-slider class="sliderStyle" thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" [max]="listLength" (input)="chosenValue($event)">
+        </mat-slider>
+      </mat-card>
+    </div>
+    <mat-card class="matCard">
+      <div class="titleDiv">
+        Lowest number of revisions
+      </div>
+      <hr>
+      <div>Number of article selected: <span class="userSelected">{{userSelection}}</span>
+      </div>
+      <div *ngFor="let lowList of lowRevList">
+        <div *ngIf="!changed" class="listStyle">{{lowList}}</div>
+      </div>
+      <div *ngFor="let lowLister of slicedLowRevList">
+        <div *ngIf="changed" class="listStyle">{{lowLister}}</div>
+      </div>
+    </mat-card>
+  </div>
+  <div style="display:flex; justify-content:space-between; margin-top: 10px;">
+    <mat-card class="matWidth">
+      <mat-card-header>
+        <mat-card-title style="font-size: 30px; margin-bottom: -10px; color: cadetblue;">{{largeArticleName}}
+          <hr>
+        </mat-card-title>
+        <mat-card-subtitle>Number of Unique Registered users: <span
+          class="userSelected">{{largeArticleUsers}}</span></mat-card-subtitle>
+        <mat-card-subtitle>Number of Revisions: <span
+          class="userSelected">{{largeArticleRevisions}}</span></mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+    <mat-card class="matWidth">
+      <mat-card-header>
+        <mat-card-title style="font-size: 30px; margin-bottom: -10px; color: cadetblue;">{{smallArticleName}}
+          <hr>
+        </mat-card-title>
+        <mat-card-subtitle>Number of Unique Registered users: <span
+          class="userSelected">{{smallArticleUsers}}</span> </mat-card-subtitle>
+        <mat-card-subtitle>Number of Revisions: <span
+          class="userSelected">{{smallArticleRevisions}}</span></mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+  <div style="display:flex; justify-content:space-between; margin-top: 10px;">
+      <mat-card class="matWidth">
+        <div class="titleDiv">
+          Longest History
+        </div>
+        <hr>
+        <div style="font-size: 30px; color: cadetblue;">1. {{longArticleName[0]}}: 
+          <span style="font-size: 20px; color: rgba(0,0,0,.54);font-weight: 400;">{{longArticleDuration[0]}} days old</span>
+        </div>
+        <div style="font-size: 30px; color: cadetblue;">2. {{longArticleName[1]}}: 
+          <span style="font-size: 20px; color: rgba(0,0,0,.54);font-weight: 400;">{{longArticleDuration[1]}} days old</span>
+        </div>
+      </mat-card>
+      <mat-card class="matWidth">
+        <div class="titleDiv">
+          Shortest History
+        </div>
+        <hr>
+        <div style="font-size: 30px; color: cadetblue;">1. {{shortArticleName[0]}}: 
+          <span style="font-size: 20px; color: rgba(0,0,0,.54);font-weight: 400;">{{shortArticleDuration[0]}} days old</span>
+        </div>
+        <div style="font-size: 30px; color: cadetblue;">2. {{shortArticleName[1]}}: 
+          <span style="font-size: 20px; color: rgba(0,0,0,.54);font-weight: 400;">{{shortArticleDuration[1]}} days old</span>
+        </div>
+      </mat-card>
+    </div>
+  <mat-card style="margin-top: 10px;">
+    <div style="float: right;">
+      <span style="font-size:14px; font-weight: bolder; color: #6C809A;">Bar Chart  </span> <mat-slide-toggle (change)="barOrPie($event)"></mat-slide-toggle> <span style="font-size:14px; font-weight: bolder; color: #6C809A;">  Pie Chart</span>
+    </div>
+    <mat-card-subtitle *ngIf="!chartChoice">Distribution by year and by user type across the whole dataset </mat-card-subtitle>
+    <app-my-bar-chart *ngIf="!chartChoice" [barData]="barData"></app-my-bar-chart>
+    <mat-card-subtitle *ngIf="chartChoice">Distribution by user type across the whole data set </mat-card-subtitle>
+    <app-pie-chart *ngIf="chartChoice" [pieData]="pieData"></app-pie-chart>
+  </mat-card>
+</div>

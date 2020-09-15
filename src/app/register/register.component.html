@@ -1,0 +1,47 @@
+<mat-card>
+  <div class="topDiv">
+    <div class="imageDiv">
+      <img mat-card-image class="imageStyle" src="assets/img/bg-01.jpg">
+    </div>
+    <div class="formDiv">
+      <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+        <mat-card-title> Register </mat-card-title>
+        <mat-card-subtitle>
+          Already have an account?
+          <a routerLink="/login">
+            Log in here.
+          </a>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <div class="form-group">
+            <mat-form-field class="simple-form-field-100">
+              <input matInput placeholder="First Name" name="firstName" formControlName="firstName" />
+              <mat-error>Required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="simple-form-field-100">
+              <input matInput placeholder="Last Name" name="lastName" formControlName="lastName" />
+              <mat-error>Required</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="simple-form-field-100">
+              <input matInput placeholder="Email" name="email" formControlName="email" />
+              <mat-error>Not a valid email</mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="simple-form-field-100">
+              <input matInput type="password" placeholder="Password" name="password" formControlName="password" />
+              <mat-error>Required</mat-error>
+            </mat-form-field>
+            <section>
+              <button [disabled]="waiting" class="simple-form-button" color="primary" mat-raised-button type="submit"
+                value="submit">
+                Register
+              </button>
+            </section>
+          </div>
+        </mat-card-content>
+      </form>
+    </div>
+  </div>
+</mat-card>

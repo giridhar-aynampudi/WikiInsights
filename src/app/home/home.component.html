@@ -1,0 +1,81 @@
+<mat-card>
+    <div class="titleDiv">
+        Insight on Wikipedia's featured Articles
+    </div>
+    <hr>
+    <div class="overallDiv">
+        <div class="barDiv">
+            <img mat-card-image src="assets/img/overall_bar.png">
+        </div>
+        <div class="header">
+            <mat-card-header>
+                <mat-card-title class="title">Overall Analytics</mat-card-title>
+                <mat-card-subtitle class="subtitle">This insight gives following information:</mat-card-subtitle>
+            </mat-card-header>
+            <ul class="listStyle">
+                <li>Articles ranked by number of revisions</li>
+                <li>Articles ranked by number of registered users</li>
+                <li>Articles with longest and shortest history</li>
+                <li>Revision number distribution by year and user type across whole dataset <span style="font-style:italic; font-size: 16px; color: cadetblue;">(Figure on left)</span></li>
+                <li>Revision number distribution by user type across whole dataset</li>
+            </ul>
+        </div>
+    </div>
+    <div class="overallDiv">
+            <div class="barDiv">
+                <mat-card-header>
+                    <mat-card-title class="title">Individual Analytics</mat-card-title>
+                    <mat-card-subtitle class="subtitle">This insight gives following information:</mat-card-subtitle>
+                </mat-card-header>
+                <ul class="listStyle">
+                    <li>This insight consists of individual article information</li>
+                    <li>Total number of revisions of the article</li>
+                    <li>Top 5 regular users of article</li>
+                    <li>Revision number distribution by year and user type of the article</li>
+                    <li>Revision number distribution by user type of the article <span style="font-style:italic; font-size: 16px; color: cadetblue;">(Figure on right)</span></li>
+                    <li>Revision number distributed by year and one user</li>
+                </ul>
+            </div>
+            <div class="barDiv">
+                    <img mat-card-image src="assets/img/individual_pie.png">
+            </div>
+    </div>
+    <div class="moreDiv">
+        For advanced analytics, SignUp or Login
+    </div>
+    <mat-card-actions align="end">
+        <button mat-raised-button color="primary" (click)="login(modal)">Login</button>
+        <button mat-raised-button color="primary" (click)="register()">Register</button>
+        <ng-template #modal>
+            <app-login></app-login>
+        </ng-template>
+    </mat-card-actions>
+    <hr>
+    <div>
+        <mat-card-title class="teamHeading">Our Team</mat-card-title>
+        <div class="teamDiv">
+            <mat-card-header>
+                <img mat-card-avatar class="imageDiv" src="assets/img/madh.JPG"/>
+                <div class="wrapper">
+                    <mat-card-subtitle class="nameDiv">Madhavan Sundararaj</mat-card-subtitle>
+                    <mat-card-subtitle>Frontend developer</mat-card-subtitle>
+                </div>
+            </mat-card-header>  
+            <mat-card-header>
+                <img mat-card-avatar class="imageDiv" src="assets/img/sha.jpg"/>
+                <div class="wrapper">
+                    <mat-card-subtitle class="nameDiv">Shashank Jain</mat-card-subtitle>
+                    <mat-card-subtitle>Node developer</mat-card-subtitle>
+                </div>
+            </mat-card-header>
+            <mat-card-header>
+                <img mat-card-avatar class="imageDiv" src="assets/img/giri.jpg"/>
+                <div class="wrapper">
+                    <mat-card-subtitle class="nameDiv">Giridhar Aynampudi</mat-card-subtitle>
+                    <mat-card-subtitle>Backend developer</mat-card-subtitle>
+                </div>
+            </mat-card-header>
+        </div>
+    </div>
+</mat-card>
+

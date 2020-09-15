@@ -1,0 +1,68 @@
+.titleDiv {
+    text-align: center;
+    font-weight: bolder;
+    color: #6C809A;
+    font-size: 30px;
+}
+
+img {
+    margin-top: 0!important;
+}
+
+.overallDiv {
+    width:100%;
+    display: flex;
+}
+
+.barDiv {
+    width: 50%;
+    margin-right: 17px;
+    object-fit: cover;
+}
+
+.header {
+    width:50%;
+}
+
+.title {
+    font-size: 26px;
+}
+
+.subTitle {
+    font-size: 16px;
+}
+
+.listStyle {
+    font-size: 20px;
+}
+
+.moreDiv {
+    text-align:center;
+    font-weight: bolder;
+    font-style: italic;
+    margin-bottom: -41px;
+}
+
+.teamHeading {
+    text-align: center
+}
+
+.teamDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+.imageDiv {
+    width: 85px;
+    height: 85px;
+}
+
+.wrapper {
+    margin-left: -23px;
+    margin-top: 15px;
+}
+
+.nameDiv {
+    color:black;
+    font-weight: bolder
+}

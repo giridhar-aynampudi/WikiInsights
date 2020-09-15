@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.mat-toolbar.mat-primary {
+    background: #6C809A;
+    color: #fff;
+  }
+
+.mat-raised-button.mat-primary {
+  background: #6C809A;
+}
+
+.simple-form-aligner {
+  display: flex;
+  justify-content: center;
+  padding-top: 26px;
+}
+
+.simple-form-card {
+  width:100%;
+}
+
+.simple-form-button {
+  align-self: flex-end;
+}
+
+.simple-form-field-100 {
+  width: 100%;
+}
+
+.simple-form-field-50 {
+  width: 49%;
+}
+
+.simple-form-spinner {
+  display:unset !important;
+  margin-left:7px;
+}

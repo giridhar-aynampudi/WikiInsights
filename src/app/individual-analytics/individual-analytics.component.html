@@ -1,0 +1,58 @@
+<div class="topDiv">
+  <mat-card class="articleDiv">
+    <div class="titleDiv">Choose Article</div>
+    <hr>
+    <form class="form">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Articles" [matAutocomplete]="auto" [formControl]="articleCtrl">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedArticle($event.option.value)">
+          <mat-option *ngFor="let article of filteredArticle | async" [value]="article._id">
+            <span>{{article._id}}</span> |
+            <small>Revisions: {{article.rev}}</small>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </mat-card>
+  <mat-card class="yearDiv">
+    <div class="titleDiv">Year Filter</div>
+    <hr>
+    <mat-form-field class="dateDiv">
+      <input matInput placeholder="From:" name="fromDate" [formControl]="date">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="To:" name="toDate" [formControl]="date2">
+    </mat-form-field>
+    <mat-card-actions align="end">
+      <span class="error" *ngIf="error">{{errorMessage}}</span>
+      <button [disabled]="filterOn" mat-raised-button color="primary" (click)="filterYears()">Filter</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<mat-card class="mainDiv" *ngIf="articleReceived">
+  <div class="artTitle">{{articleTitle}}
+    <mat-card-subtitle>{{totalRevision}} total revisions made</mat-card-subtitle>
+  </div>
+  <hr>
+  <div *ngFor="let users of topFiveUsers">
+    <div class="userDiv">
+      {{users.user}} : <span class="revSpan">{{users.revisions}} revisions</span>
+    </div>
+  </div>
+</mat-card>
+<mat-card class="mainDiv">
+  <mat-spinner class="spinner" *ngIf="waiting"></mat-spinner>
+  <div *ngIf="articleReceived">
+    <mat-card-subtitle *ngIf="overallBar">Distribution by year and by user type across {{articleTitle}} </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="pieChart">Distribution by year and by user type across {{articleTitle}} </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="individualBar">Distribution by year and by single user type across {{articleTitle}} </mat-card-subtitle>
+    <mat-card-actions class="buttonStyle" align="end">
+      <button mat-raised-button color="primary" (click)="chartType('overallBar')">Overall Bar Chart</button>
+      <button mat-raised-button color="primary" (click)="chartType('pieChart')">Pie chart</button>
+      <button mat-raised-button color="primary" (click)="chartType('individualBar')">Individual Bar Chart</button>
+    </mat-card-actions>
+    <app-my-bar-chart *ngIf="overallBar" [barData]="barData"></app-my-bar-chart>
+    <app-pie-chart *ngIf="pieChart" [pieData]="pieData"></app-pie-chart>
+    <app-my-bar-chart *ngIf="individualBar" [barData]="individualData" [type]="individual"></app-my-bar-chart>
+  </div>
+</mat-card>
